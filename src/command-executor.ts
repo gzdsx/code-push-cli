@@ -1344,12 +1344,18 @@ export var releaseReact = (command: cli.IReleaseReactCommand): Promise<void> => 
                 if (!entryFile) {
                     entryFile = `index.${platform}.js`;
                     if (fileDoesNotExistOrIsDirectory(entryFile)) {
+                        entryFile = `index.${platform}.ts`;
+                    }
+                    if (fileDoesNotExistOrIsDirectory(entryFile)) {
                         entryFile = 'index.js';
+                    }
+                    if (fileDoesNotExistOrIsDirectory(entryFile)) {
+                        entryFile = 'index.ts';
                     }
 
                     if (fileDoesNotExistOrIsDirectory(entryFile)) {
                         throw new Error(
-                            `Entry file "index.${platform}.js" or "index.js" does not exist.`,
+                            `Entry file "index.${platform}.js", "index.${platform}.ts", "index.js" or "index.ts" does not exist.`,
                         );
                     }
                 } else {

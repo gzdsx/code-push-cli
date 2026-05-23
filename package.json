@@ -1,6 +1,6 @@
 {
-  "name": "@shm-open/code-push-cli",
-  "version": "2.6.5",
+  "name": "@gzdsx/code-push-cli",
+  "version": "2.6.6",
   "description": "Management CLI for the CodePush service",
   "main": "bin/cli.js",
   "scripts": {
@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/shm-open/code-push-cli"
+    "url": "https://github.com/gzdsx/code-push-cli"
   },
   "keywords": [
     "code",
@@ -26,7 +26,7 @@
     "react-native",
     "react"
   ],
-  "homepage": "https://github.com/shm-open/code-push-cli",
+  "homepage": "https://github.com/gzdsx/code-push-cli",
   "author": "shihuimiao",
   "license": "MIT",
   "dependencies": {
@@ -45,6 +45,7 @@
     "progress": "2.0.3",
     "prompt": "1.3.0",
     "properties": "1.2.1",
+    "punycode": "^2.3.1",
     "recursive-fs": "2.1.0",
     "rimraf": "3.0.2",
     "semver": "7.3.7",
