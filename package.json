@@ -1,6 +1,6 @@
 {
   "name": "@gzdsx/code-push-cli",
-  "version": "2.6.8",
+  "version": "2.6.10",
   "description": "Management CLI for the CodePush service",
   "main": "bin/cli.js",
   "scripts": {

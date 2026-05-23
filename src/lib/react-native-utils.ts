@@ -1,9 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import xml2js from 'xml2js';
-import { out } from '../util/interaction';
-import { isValidVersion, isLowVersion } from './validation-utils';
-import { fileDoesNotExistOrIsDirectory } from './file-utils';
+import {out} from '../util/interaction';
+import {isValidVersion, isLowVersion} from './validation-utils';
+import {fileDoesNotExistOrIsDirectory} from './file-utils';
 import chalk from 'chalk';
 import * as cli from '../definitions/cli';
 
@@ -537,7 +537,7 @@ export function getiOSHermesEnabled(podFile: string): Promise<boolean> {
     }
 
     return new Promise((resolve, reject) => {
-        fs.readFile(podPath, { encoding: 'utf8' }, (error, res) => {
+        fs.readFile(podPath, {encoding: 'utf8'}, (error, res) => {
             if (error) {
                 reject(error);
                 return;
@@ -602,7 +602,7 @@ function getHermesCommand(): string {
     if (fileExists(hermesEngine)) {
         return hermesEngine;
     }
-    return path.join('node_modules', 'hermesvm', getHermesOSBin(), 'hermes');
+    return path.join('node_modules', 'hermes-compiler', 'hermesc', getHermesOSBin(), 'hermesc');
 }
 
 function getComposeSourceMapsPath(): string {
