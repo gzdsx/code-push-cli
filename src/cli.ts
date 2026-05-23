@@ -1,9 +1,10 @@
 ﻿#!/usr/bin/env node
 
-// Suppress the punycode module deprecation warning (Node.js 21+)
+// Suppress deprecation warnings from Node.js built-in modules (Node.js 21+)
 const _emitWarning = process.emitWarning;
+const SUPPRESSED_WARNINGS = ['punycode', 'Array.isArray'];
 process.emitWarning = function (warning: string | Error, options?: any, ...rest: any[]): void {
-    if (typeof warning === 'string' && warning.includes('punycode')) {
+    if (typeof warning === 'string' && SUPPRESSED_WARNINGS.some((w) => warning.includes(w))) {
         return;
     }
     return _emitWarning.apply(process, [warning, options, ...rest].filter(Boolean) as any);
